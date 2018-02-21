@@ -1,0 +1,62 @@
+#footer
+	background-color: #1b1c1d
+	padding: rem(20) 0
+	margin-top: rem(40)
+
+	*
+		font-size: rem(12)
+	
+	.footer-links, .container
+		display: flex
+
+	.footer-links
+		flex: 1
+
+	li
+		margin-top: 0.5em
+
+	.sub-title
+		font-weight: bold
+		font-size: 1.1em
+		color: #fff
+
+	a
+		color: #aaa
+		position: relative
+		&:before
+			+bottom-underline
+			background-color: #aaa
+			height: 1px
+
+		&:hover:before
+			width: 100%
+	
+	.footer-images
+		max-width: rem(300)
+
+	img
+		width: auto
+		height: rem(40)
+		display: block
+		margin-top: rem(10)
+
+	.copyright
+		margin-top: rem(40)
+		display: block
+		text-align: center
+
+
+@media #{$mobile-media}
+	#footer
+		.container
+			flex-wrap: wrap
+			justify-content: center
+
+		.footer-links
+			width: 100%
+			flex: auto
+			margin-bottom: rem(40)
+			justify-content: space-between
+
+			.col-4
+				width: auto
