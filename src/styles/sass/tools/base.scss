@@ -1,14 +1,25 @@
-*{
-  font-family: 'Lato', sans-serif;
-  font-size: 1.6rem;
-  color: $font-color
-}
+// @font-face {
+//   font-family: 'Vision';
+//   src: url('../assets/font/Vision.otf') format('opentype');
+// }
+
+// @font-face {
+//   font-family: 'Vision Bold';
+//   src: url('../assets/font/Vision-Bold.otf') format('opentype');
+//   font-style: bold;
+// }
+
 
 html, body {
   position: relative;
   margin: 0px;
   padding: 0px;
-  color: $font-color;
+  font-family: 'Lato', sans-serif;
+  color: $accent-dark;
+}
+
+* {
+	font-size: 2rem;
 }
 
 a, a:hover, a:active, a:visited, a:focus{

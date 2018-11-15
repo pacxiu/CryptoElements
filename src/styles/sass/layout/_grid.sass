@@ -1,17 +1,72 @@
-body
-	padding-top: $nav-height
-
 .container
 	+center-block
 	width: 100%
-	max-width: 1370px
-	padding: 0 rem(10)
+	max-width: rem(1370)
+	padding: rem(20) rem(10)
 	box-sizing: border-box
 
+	&.--thiner
+		max-width: 1080px
 .col-4
 	width: 33.3333%
 
+.col-6
+	width: 50%
 
-// @media #{$mobile-media}
-// 	.container
-// 		padding: 0 5px
+.full-height
+	position: relative
+	width: 100%
+	height: auto
+	min-height: calc(100vh - #{$nav-height})
+
+.--full-height
+	height: 100%
+
+.u-center-block
+	+center-block
+
+.u-overflow
+	overflow: hidden
+
+.--flex
+	display: flex
+
+.--spacer
+	margin-bottom: rem(40)
+
+// footer always on bottom
+#root
+	box-sizing: border-box
+	padding-top: $nav-height
+	padding-bottom: rem(274)
+	position: relative
+	min-height: 100vh
+
+#footer
+	min-height: rem(200)
+	box-sizing: border-box
+	position: absolute
+	bottom: 0
+	left: 0
+	right: 0
+
+	.container
+		padding-top: 0
+		padding-bottom: 0
+
+
+.u-mobile-show
+	display: none
+
+.u-mobile-hide
+	display: block
+
+@media #{$mobile-media}
+	#root
+		padding-bottom: rem(389, $mobile-rem)
+	
+	.u-mobile-show
+		display: block
+
+	.u-mobile-hide
+		display: none

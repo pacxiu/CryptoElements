@@ -1,0 +1,286 @@
+.element-background
+	padding: rem(50) 0 rem(80)
+	margin-bottom: rem(20)
+
+	.element-card
+		+center-block
+		font-size: rem(28)
+		transform-style: preserve-3d
+		transform: perspective(1000px) rotateX(-5deg) rotateY(-40deg)
+		// box-shadow: 3px 3px 10px 3px rgba(0,0,0,0.5)
+
+	.shadow
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		margin: 0 auto
+		width: 80%
+		height: rem(70)
+		border-radius: 50%
+		transform-origin: bottom left
+		transform: rotateY(0) rotateX(90deg) translateY(200%) translateZ(0rem) translateX(38%)
+		background-color: rgba(0,0,0, 0.7)
+		filter: blur(30px)
+
+.attribute-container
+	padding-right: 2em
+	font-size: rem(10)
+	flex: 1
+	border-right: 1px solid $accent-gray
+
+	.attribute-name
+		font-size: 6em
+		font-weight: bold
+		margin-top: 0
+		margin-bottom: 0
+
+	.attribute-origin
+		margin-bottom: 0.75em
+
+	h2
+		text-transform: uppercase
+		font-size: 3em
+		color: $accent-primary
+
+	h3
+		margin-top: 2em
+		font-size: 2em
+		text-transform: uppercase
+
+	strong
+		margin-bottom: 0.2em
+		display: inline-block
+
+.element-groups
+	margin: 1em auto
+
+	span:last-of-type
+		margin-left: 0.5em
+
+.icons-container
+	position: relative
+
+	&:after
+		position: absolute
+		z-index: -1
+		display: block
+		content: ""
+		width: 82%
+		height: 1px
+		background-color: $accent-secondary
+		top: 3.5rem
+		left: 0
+		right: 0
+		margin-left: auto
+		margin-right: auto
+
+.attribute-icon
+	+center-block
+	+center-flex
+	+size(7rem)
+	margin-bottom: rem(10)
+	border-radius: 50%
+	background-color: white
+	border: 2px solid $accent-secondary
+	overflow: hidden
+	
+	svg
+		position: relative
+		width: 70%
+		fill: $accent-secondary
+
+	&.--occurance svg
+		width: 65%
+		transform: translateY(8%)
+
+	&.--discover svg
+		width: 65%
+		transform: translateY(2%)
+
+	&.--boiling svg
+		width: 68%
+		transform: translateY(-5%)
+
+	&.--melting svg
+		transform: translateY(5%)
+
+	&.--weight svg
+		transform: translateY(5%) translateX(-2%)
+
+.owner-container
+	width: 30%
+	min-width: rem(200)
+
+.scrolling-element
+	text-align: center
+	width: rem(200)
+	margin-left: 5rem
+
+.owner-container
+	position: relative
+	border: none
+	background-color: #fff
+
+	.attribute-icon
+		border-color: $accent-dark
+		margin-bottom: 0
+	
+	svg
+		fill: $accent-dark
+	
+	.price
+		margin-top: rem(10)
+		font-size: rem(18)
+	.btn
+		margin: 0
+		margin-top: rem(5)
+		font-size: rem(20)
+		border-width: 2px!important
+		padding: .4em 1.5em
+
+	.is-fixed
+		transform: translateY(-50%)
+		top: calc(50% + 2rem)
+		position: fixed
+
+.tooltip
+	+center-flex
+	+size(1.6rem)
+	margin: 0 auto
+	margin-top: rem(10)
+	min-width: 16px
+	min-height: 16px
+	font-weight: bold
+	cursor: pointer
+	border: 1px solid $accent-dark
+	color: lighten($accent-dark, 10%)
+	border-radius: 50%
+	background-size: 80%
+	background-repeat: no-repeat
+	background-position: center center
+
+.--element
+	max-width: 15em
+	background-color: $accent-primary!important
+	color: white!important
+
+	&.show
+		opacity: 1!important
+
+// SPECIFIC FOR SITES
+#element-site
+	.card-container
+		+center-block
+		margin-top: rem(40)
+		width: rem(280)
+
+#scientist-site
+	.element-background
+		background-color: $accent-gray
+
+	.element-card
+		border-color: #595959
+		border-width: 6px
+		height: 9em
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+
+	.shadow
+		background-color: rgba(0,0,0, 0.8)
+
+	.attribute-name
+		font-size: 5em
+		margin-bottom: rem(20)
+
+	.scientist-bio
+		margin-top: 1em
+		margin-bottom: 2em
+		text-align: left
+
+		p
+			margin-bottom: 1.5em
+
+		&+p
+			text-align: left
+			margin-bottom: 2em
+
+#periodic-site
+	.element-background
+		background-color: #fc8b69
+
+	.element-card
+		border-color: map-get($element-colors, 12)
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+
+	.periodic-description
+		text-align: left
+		margin-top: rem(40)
+
+	p
+		margin-bottom: 1.5em
+
+	strong
+		text-align: center
+
+@media screen and (min-width: $tablet-layout + 1)
+	#scientist-site
+		.cards-container
+			margin-left: -1.5rem
+			margin-right: -1.5rem
+		.card-container
+			width: calc(33% - 3rem)
+			margin-left: 1.5rem
+			margin-right: 1.5rem
+
+@media screen and (min-width: $mobile-layout + 1)
+	#scientist-site
+		.cards-container
+			justify-content: center
+		.card-container
+			width: calc(50% - 3rem)
+			max-width: rem(280)
+
+@media #{$mobile-media}
+	.element-background .element-card
+		font-size: rem(24)
+
+	.owner-container
+		.scrolling-element
+			margin: 0 auto
+
+		.is-fixed
+			position: relative
+			transform: none
+			top: 0
+
+	.token-site
+		.container.--flex
+			flex-wrap: wrap
+
+	.attribute-container, .owner-container
+		width: 100%
+
+	.attribute-container
+		padding-right: 0
+		border-right: none
+
+		.col-4
+			strong, p
+				font-size: rem(18)
+
+	.owner-container
+		order: -1
+		padding-top: 0
+		margin-bottom: rem(20)
+
+	.icons-container:after
+		width: 100%
+
+	#element-site
+		.image-card .token-image
+			padding-bottom: rem(250)
+

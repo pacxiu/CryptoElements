@@ -18,6 +18,16 @@
 	justify-content: center
 	flex-wrap: wrap
 
+=overlay
+	display: flex
+	align-items: center
+	justify-content: center
+	+position(absolute, 0 0 0 0)
+	z-index: 2
+	background-color: rgba(0, 0, 0, 0.4)
+	opacity: 0
+	transition: $transition-std
+
 =placeholder
 	&::-webkit-input-placeholder
 		@content
@@ -31,7 +41,7 @@
 =bottom-underline
 	position: absolute
 	content: ''
-	height: 2px
+	height: rem(1)
 	width: 0
 	bottom: 0
 	left: 0

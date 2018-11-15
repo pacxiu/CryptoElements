@@ -1,0 +1,247 @@
+.cards-container
+	display: flex
+	flex-wrap: wrap
+	margin-left: -2rem
+	margin-right: -2rem
+
+// CARD BASE STYLES
+.card-container
+	width: calc(25% - 4rem)
+	margin-bottom: rem(20)
+	text-align: center
+	box-sizing: border-box
+	margin-left: 2rem
+	margin-right: 2rem
+
+.token-card
+	font-size: rem(26)
+	border: rem(6) solid map-get($element-colors, 0)
+	background-color: map-get($element-colors, 0)
+
+	.loader
+		box-shadow: 0 0.2rem 0 0 map-get($element-colors, 0)
+
+	.btn
+		color: map-get($element-colors, 0)
+		border-color: map-get($element-colors, 0)!important
+
+		&:hover
+			background-color: map-get($element-colors, 0)
+			color: white!important
+
+.token-name
+	color: white
+	font-size: 0.69em
+	padding: 0.6em 0
+
+.token-price
+	color: map-get($element-colors, 0)
+	padding: 0.3em
+	font-size: inherit
+	background-color: white
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+	.price
+		font-size: 0.538em
+		display: flex
+		align-items: center
+
+	.btn
+		margin: 0
+		font-size: 0.577em
+		border-width: 2px!important
+		padding: .4em 1.5em
+
+.token-image
+	color: $accent-dark
+	font-size: inherit
+	display: block
+	background-color: #fff
+	border-bottom: rem(6) solid map-get($element-colors, 0)
+	padding: 1.52em 0 1.12em
+	position: relative
+	overflow: hidden
+
+	.btn
+		font-size: 0.777em
+		transform: translateX(-#{rem(300)})
+		transition: $transition-std
+
+	.overlay
+		+overlay
+
+	&:hover
+		.overlay
+			opacity: 1
+
+		.btn
+			transform: translateX(0)
+
+.card-owner
+	.loader
+		margin: 0 auto
+		box-shadow: 0 0.2rem 0 0 $accent-dark
+
+	a
+		padding: rem(5) 0
+		display: block
+		margin: 0 auto
+		overflow: hidden
+		text-overflow: ellipsis
+		width: 70%
+		min-width: rem(150)
+		color: map-get($element-colors, 0)
+
+.is-loading
+	color: red
+
+// ELEMENT SPECIFIC
+#element-site
+	.element-card
+		border-color: $accent-dark
+
+		*
+			color: $accent-dark
+
+.element-card
+	height: auto
+	border: 2px solid black
+	padding: rem(10)
+	display: inline-block
+	margin: rem(10)
+	font-size: rem(13)
+	text-align: center
+	+size(10em)
+	background-color: white
+	box-shadow: 0.3rem 0.3rem 0.5rem 0px rgba(0, 0, 0, 0.4)
+
+	* 
+		color: black
+
+	&.simple
+		border: rem(3) solid $accent-secondary
+		box-shadow: none
+
+		*
+			color: $accent-secondary
+
+	.element-symbol
+		font-size: 5em
+		line-height: 1
+		margin: 0.1em 0
+
+	.element-name
+		font-size: 1.25em
+
+	.element-number
+		font-size: 1.5em
+		font-weight: bold
+
+.element-symbol
+	font-size: 6em
+	font-weight: bold
+	line-height: 0.85
+
+.element-name
+	margin-top: 0.5em
+	font-size: 1em
+
+.element-number
+	font-size: 1em
+
+
+// SCIENTISTS CARD
+.image-card
+	.token-image
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+		padding: 0
+		padding-bottom: rem(280)
+
+// COLOR FOR DIFFERENT ELEMENTS
+@for $i from 0 through 13
+	[data-color="#{$i}"]
+		border-color: map-get($element-colors,$i)
+		background-color: map-get($element-colors,$i)
+
+		.loader
+			box-shadow: 0 0.2rem 0 0 map-get($element-colors, $i)
+
+		.token-price
+			color: map-get($element-colors,$i)
+
+		.btn
+			color: map-get($element-colors,$i)
+			border-color: map-get($element-colors,$i)!important
+
+			&:hover
+				background-color: map-get($element-colors,$i)
+
+		.token-image
+			border-color: map-get($element-colors,$i)
+
+		& ~ .card-owner, .card-owner
+			a
+				color: map-get($element-colors, $i)
+
+@media #{$small-desktop-media}
+	.cards-container
+		margin-left: -1.5rem
+		margin-right: -1.5rem
+
+	.card-container
+		width: calc(25% - 3rem)
+		margin-left: 1.5rem
+		margin-right: 1.5rem
+
+	.token-card
+		font-size: rem(24)
+
+	.token-name
+		font-size: .8em
+
+@media #{$tablet-media}
+	.cards-container
+		justify-content: center
+
+	.card-container
+		max-width: rem(300)
+		width: calc(33% - 3rem)
+
+@media #{$mobile-media}
+	.image-card .token-image
+		padding-bottom: rem(250)
+
+	.token-price 
+		.price, .btn
+			font-size: 0.6em
+
+	.card-container
+		width: calc(50% - 3rem)
+
+	.element-symbol
+		font-size: 4em
+
+@media screen and (max-width: 479px)
+	.image-card .token-image
+		padding-bottom: rem(200)
+
+	.cards-container
+		margin-left: -0.5rem
+		margin-right: -0.5rem
+
+	.card-container
+		width: calc(50% - 1rem)
+		margin-left: 0.5rem
+		margin-right: 0.5rem
+
+	.token-card
+		font-size: rem(20)
+
+@media screen and (max-width: 379px)
+	.image-card .token-image
+		padding-bottom: rem(170)
+

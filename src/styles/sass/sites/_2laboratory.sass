@@ -1,0 +1,101 @@
+#filters
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin-bottom: rem(60)
+	margin-top: rem(50)
+
+	.is-active
+		background-color: $accent-secondary
+		color: white
+
+	select
+		outline: none
+		padding: 0.5em 0.7em
+		margin-left: rem(20)
+		text-transform: none
+		cursor: pointer
+
+	p
+		margin-bottom: rem(10)
+		font-weight: bold
+
+.filters-market
+	a
+		margin-right: rem(15)
+		font-size: rem(15)
+
+// Pagination
+#pagination-container
+	text-align: center
+
+.pagination
+	display: inline-block
+	margin: rem(30) auto
+	margin-top: rem(50)
+	text-align: center
+	overflow: hidden
+	border-radius: rem(10)
+	border: 2px solid $accent-secondary
+
+	li
+		display: inline-block
+		cursor: pointer	
+		color: $accent-secondary
+		transition: $transition-std
+		transition-duration: 0.15s
+
+		&:not(:first-child)
+			border-left: 2px solid $accent-secondary
+
+		&:hover:not(.break-me)
+			color: lighten($accent-secondary, 20%)
+	
+	a
+		outline: none
+		display: block
+		padding: 0.4em 0.8em
+
+	.break-me
+		padding: 0.4em 0.8em
+		cursor: default
+
+	.active
+		background-color: $accent-secondary!important
+		color: white!important
+
+	.disabled
+		color: #ccc!important
+		cursor: default
+
+@media #{$tablet-media}
+	.filters-market
+		a
+			margin-right: rem(10)
+
+@media #{$mobile-media}
+	#filters
+		flex-wrap: wrap
+
+		select
+			margin-left: 0
+
+			&:first-of-type
+				margin-right: rem(10)
+
+	.filters-market
+		width: 100%
+		
+		a
+			margin-bottom: rem(10)
+
+	.filters-sort
+		text-align: left
+
+@media screen and (max-width: 379px)
+	.pagination
+		li a 
+			padding: 0.4em 0.6em
+		.next a, .previous a
+			padding: 0.4em 0.5em
+		

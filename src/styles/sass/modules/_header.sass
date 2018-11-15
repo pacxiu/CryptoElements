@@ -5,11 +5,123 @@
 	right: 0
 	height: $nav-height
 	background-color: white
-	box-shadow: 0 0px 11px -2px rgba(0,0,0,.75)
+	box-shadow: 0 0px 11px -2px rgba(251,107,63,.75)
+	z-index: 20
 
 	.container
+		max-width: calc(100% - 4rem)
 		display: flex
 		justify-content: space-between
 		align-items: center
 		height: inherit
 
+	.btn
+		font-size: rem(18)
+		padding: .4em 1em
+
+.logo-container
+	display: flex
+	align-items: center
+
+	img
+		width: rem(200)
+
+.account-container
+	display: flex
+	align-items: center
+
+	.--network
+		max-width: 10em
+		font-size: 14px
+		background-color: $accent-secondary!important
+		color: white!important
+
+		&.show
+			opacity: 1
+
+.network-status
+	margin-right: rem(10)
+	cursor: pointer
+
+	svg
+		width: rem(25)
+		fill: #fa3e05
+
+	&.is-online svg
+		fill: $accent-secondary
+
+.dropdown
+	position: relative
+
+	.dropdown-toggle
+		display: flex
+		align-items: center
+		justify-content: space-between
+		cursor: pointer
+		padding: 0.2em 1em
+		text-transform: none
+		width: 8em
+		border: none!important
+		border-radius: 0
+
+		&:hover
+			background-color: $accent-primary
+			color: white
+
+	.dropdown-toggle:after
+		display: inline-block
+		width: 0
+		height: 0
+		margin-left: rem(20)
+		content: ""
+		border-top: .3em solid
+		border-right: .3em solid transparent
+		border-bottom: 0
+		border-left: .3em solid transparent
+
+	&:hover
+		.dropdown-content
+			display: block
+
+.dropdown-content
+	display: none
+	position: absolute
+	bottom: 0
+	left: 0
+	width: 100%
+	box-sizing: border-box
+	padding: 0.4em
+	transform: translateY(100%)
+	border: 1px solid $accent-primary
+	background-color: white
+	text-align: center
+
+	.account-address
+		+center-block
+		overflow: hidden
+		text-overflow: ellipsis
+		width: 90%
+	
+	.account-address, a
+		display: block
+		padding: 0.4em 0
+		font-size: 0.8em
+
+	a
+		border-top: 1px solid $accent-primary
+
+	a:hover
+		background-color: $accent-primary
+		color: white
+
+@media #{$mobile-media}
+	#menu 
+		.container
+			max-width: 100%
+		.dropdown-toggle
+			width: 6em
+			padding: 0.4em 0.7em
+
+	.logo-container img
+		width: rem(50)
+		

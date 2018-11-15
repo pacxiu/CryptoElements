@@ -1,8 +1,22 @@
 html
-  font-size: 10px
+	font-size: 10px
 
-  @media screen and (min-width: 1680px)
-    font-size: 12px
+	// 27 inch
+	@media screen and (min-width: 2559px)
+		font-size: 14px
+	// 4kHD
+	@media screen and (min-width: 3839px)
+		font-size: 21px
+
+	@media screen and (max-width: 1600px)
+		font-size: 9px
+
+	// end desktop
+	@media #{$small-desktop-media}
+		font-size: 8.5px
+
+	@media #{$tablet-media}
+		font-size: 8px
 
 .u-bold
 	font-weight: bold
@@ -12,3 +26,15 @@ html
 
 .u-uppercase
 	text-transform: uppercase
+
+.u-italic
+	font-style: italic
+
+.u-text-center
+	text-align: center
+
+.u-accent-primary
+	color: $accent-primary
+
+.u-accent-secondary
+	color: $accent-secondary

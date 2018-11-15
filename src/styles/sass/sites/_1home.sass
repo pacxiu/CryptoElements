@@ -1,0 +1,259 @@
+.main-container
+	background: url(../assets/main_bg.jpg);
+	background-size: cover;
+
+	.container
+		+center-absolute
+		text-align: center
+
+	h1
+		font-size: rem(100)
+		color: $accent-primary
+		margin: 0
+		margin-bottom: 0.3em
+		line-height: 1em
+
+.home-section
+	padding: rem(50) 0
+	overflow: hidden
+	font-size: rem(19)
+
+	h2
+		font-size: 1.78em
+		margin: 0
+		margin-bottom: 0.5em
+
+	p
+		+center-block
+		font-size: 1em
+		max-width: 27em
+
+	.container
+		text-align: center
+
+	.btn
+		margin-top: rem(30)
+
+	&:nth-child(2)
+		p
+			max-width: 37em
+
+.container-icons
+	display: flex
+	align-items: center
+
+	.col-6
+		padding: 0 rem(20)
+		transition: 1s opacity ease-in-out, 1s transform ease-in-out
+		opacity: 0
+		transform: translateX(-50vw)
+
+		&:nth-child(2)
+			transform: translateX(50vw)
+
+	&.animate-in
+		.col-6
+			opacity: 1
+			transform: translateX(0)
+
+.accent-icons
+	display: flex
+	align-items: center
+	justify-content: center
+	background-color: $accent-secondary
+	border-radius: rem(20)
+	padding: rem(150) rem(20)!important
+	
+	.plus
+		color: white
+		font-weight: bold
+		font-size: rem(70)
+		margin: 0 1.1em
+
+.rule-section
+	padding: rem(150) 0
+	background: #fe7b39
+	background-repeat: no-repeat
+	background-position: center right
+	background-size: auto 100%
+
+	h2, p
+		color: #fff
+
+	.container
+		display: flex
+		align-items: center
+
+// CARD section
+.card-section
+	background-color: $accent-gray
+	overflow: hidden
+
+	.image-container
+		+center-block
+		max-width: 80%
+		min-width: rem(270)
+		position: relative
+		cursor: pointer
+		overflow: hidden
+		margin-bottom: rem(20)
+
+		&:hover
+			.overlay
+				opacity: 1
+
+			.btn
+				transform: translateX(0)
+
+	.btn
+		font-size: 0.777em
+		transform: translateX(-#{rem(300)})
+		transition: $transition-std
+
+	.overlay
+		+overlay
+
+	.container
+		display: flex
+
+	.col-4
+		text-align: center
+		padding: 0 rem(30)
+		transition: 1s opacity ease-in-out, 1s transform ease-in-out
+		opacity: 0
+		transform: translateY(#{rem(300)})
+
+		&:nth-child(2)
+			transition-delay: 0.3s
+
+		&:nth-child(3)
+			transition-delay: 0.6s
+
+	img
+		display: block
+		width: 100%
+
+	.card-title
+		text-transform: uppercase
+		font-weight: bold
+		color: $accent-primary
+		margin-bottom: 0.8em
+
+	
+
+.card-section.animate-in
+	.col-4
+		opacity: 1
+		transform: translateY(0)
+
+
+// SLIDER
+.slider-section
+	padding-bottom: rem(0)
+	h2
+		margin-bottom: 0.25em
+
+	.element-card:nth-child(2n)
+		margin-top: rem(30)
+
+	.element-card
+		margin: rem(5)
+
+.elements-words
+	padding: rem(20) 0 rem(35)
+
+	// .element-card
+	// 	margin-left: 1px
+	// 	margin-right: 0
+
+.slick-slide
+	outline: none
+	display: flex!important
+	justify-content: center
+
+
+
+@media #{$tablet-media}
+	.card-section
+		.col-4
+			padding: 0 rem(20)
+	.container-icons
+		flex-wrap: wrap
+		
+		.col-6
+			width: 100%
+			padding: 0
+			transform: translateX(-100vw)
+
+			&:nth-child(2)
+				transform: translateX(100vw)
+
+	.accent-icons
+		margin-left: auto
+		margin-right: auto
+		margin-top: rem(50)
+		max-width: 600px
+		padding: 11rem 2rem!important
+
+
+
+@media #{$mobile-media}
+	.main-container h1
+			font-size: rem(80)
+
+	.card-section
+		.container
+			flex-wrap: wrap
+
+		.col-4
+			width: 100%
+			margin-bottom: rem(50)
+			padding: 0
+
+		.image-container
+			max-width: 250px
+
+	.rule-section
+		padding: rem(60) 0 rem(100)
+		background-image: none!important
+
+		.container div
+			+center-block
+
+	.accent-icons
+		img
+			height: 140px
+
+		.plus
+			font-size: rem(60)
+			margin: 0 0.9em
+	
+	.slider-container
+		+center-block
+		max-width: 220px
+
+	.slick-slide
+		display: flex
+		margin-left: auto
+		margin-right: auto
+		flex-wrap: wrap
+		justify-content: center
+		width: 100%
+
+	.slick-track
+		display: flex
+		align-items: center
+
+		.element-card
+			font-size: rem(12)
+
+
+
+@media screen and (max-width: 510px) 
+	.accent-icons
+		img
+			height: 90px
+
+		.plus
+			font-size: rem(50)
+

@@ -1,0 +1,53 @@
+#profile-site
+	.attribute-icon
+		text-align: center
+		+size(10rem)
+		border-color: $accent-dark
+		margin: 0
+		margin-right: rem(20)
+
+	svg
+		fill: $accent-dark
+
+	.own-cards
+		margin-top: rem(20)
+
+	.nickname
+		display: block
+		overflow: hidden
+		-o-text-overflow: ellipsis
+		text-overflow: ellipsis
+		max-width: 15em
+
+.profile-details
+	margin: rem(20) 0
+	display: flex
+	align-items: center
+
+.modify-container
+	margin-top: rem(20)
+	.btn
+		font-size: rem(16)
+		padding: 0.6em 1.2em
+		margin-top: 1rem
+
+	.--flex
+		align-items: center
+		justify-content: center
+
+
+	input
+		width: 5em
+		padding: 0.2em 0.5em
+		outline: none
+		margin-right: rem(10)
+		border-radius: rem(50)
+		border-style: solid
+		border-width: 1px
+		border-color: $accent-dark
+		background-color: $accent-gray
+
+@media screen and (max-width: 479px)
+	#profile-site
+		.nickname
+			max-width: 11em

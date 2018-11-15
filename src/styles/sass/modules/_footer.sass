@@ -1,10 +1,9 @@
 #footer
-	background-color: #1b1c1d
-	padding: rem(20) 0
-	margin-top: rem(40)
+	background-color: $accent-gray
+	padding: rem(40) 0 rem(20)
 
 	*
-		font-size: rem(12)
+		font-size: rem(15)
 	
 	.footer-links, .container
 		display: flex
@@ -15,35 +14,63 @@
 	li
 		margin-top: 0.5em
 
+	.social-icon
+		display: inline-block
+
+		svg
+			transition: 0.3s ease-in-out
+			width: rem(30)
+			margin-top: 0!important
+			margin-right: rem(10)
+
 	.sub-title
+		display: block
 		font-weight: bold
+		text-transform: uppercase
 		font-size: 1.1em
-		color: #fff
+		color: $accent-secondary
+		margin-bottom: 1em
+
+	.footer-images .sub-title
+		color: $accent-primary
 
 	a
-		color: #aaa
+		color: $accent-dark
 		position: relative
 		&:before
 			+bottom-underline
-			background-color: #aaa
+			background-color: $accent-dark
 			height: 1px
 
 		&:hover:before
 			width: 100%
 	
 	.footer-images
-		max-width: rem(300)
+		width: rem(300)
 
 	img
 		width: auto
-		height: rem(40)
 		display: block
 		margin-top: rem(10)
+
+		&:last-child
+			margin-top: rem(20)
 
 	.copyright
 		margin-top: rem(40)
 		display: block
 		text-align: center
+
+	.link-facebook:hover svg
+		fill: #3a5998
+
+	.link-twitter:hover svg
+		fill: #1ba1f3
+
+
+	.link-discord:hover svg
+		fill: #304eb6
+
 
 
 @media #{$mobile-media}
@@ -60,3 +87,10 @@
 
 			.col-4
 				width: auto
+
+		.footer-images
+			text-align: center
+
+			img
+				margin-left: auto
+				margin-right: auto
